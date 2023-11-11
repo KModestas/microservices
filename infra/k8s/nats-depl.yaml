@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nats-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nats
+  template:
+    metadata:
+      labels:
+        app: nats
+    spec:
+      containers:
+        - name: nats
+          # nats image on docker hub
+          image: nats-streaming:0.17.0
+          # cli arguments to be passed to the primary command when the container is executed
+          args:
+            [
+              '-p',
+              '4222',
+              '-m',
+              '8222',
+              # heartbeat settings (hbi, hbt, hbf)
+              '-hbi',
+              '5s',
+              '-hbt',
+              '5s',
+              '-hbf',
+              '2',
+              '-SD',
+              '-cid',
+              'ticketing',
+            ]
+---
+apiVersion: v1
+# cluster ip service
+kind: Service
+metadata:
+  name: nats-srv
+spec:
+  selector:
+    app: nats
+  # here we expose 2 different ports for Nats
+  ports:
+    - name: client
+      protocol: TCP
+      port: 4222
+      targetPort: 4222
+      # access this port to see details logs produced by Nats
+    - name: monitoring
+      protocol: TCP
+      port: 8222
+      targetPort: 8222

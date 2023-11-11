@@ -1,0 +1,5 @@
+// no longer using this mock. We are using the actual stripe client in our test so that we can more realistically test stripe
+  charges: {
+    create: jest.fn().mockResolvedValue({}),
+  },
+};
