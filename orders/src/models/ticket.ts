@@ -56,7 +56,7 @@ ticketSchema.plugin(updateIfCurrentPlugin);
 ticketSchema.statics.findByEvent = (event: { id: string; version: number }) => {
   return Ticket.findOne({
     _id: event.id,
-    // make sure to always handle records in the correct order. The current record can only override a record with its version number - 1
+    // when the primary service updates the document in its DB, the version number will be incremented. The rest of the DB's will need to be filtered by the version - 1.
     version: event.version - 1,
   });
 };

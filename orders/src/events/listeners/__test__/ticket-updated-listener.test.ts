@@ -20,7 +20,6 @@ const setup = async () => {
   // Create a fake data object 
   const data: TicketUpdatedEvent['data'] = {
     id: ticket.id,
-    // since we just updated the ticket in the DB we know the version no. was incremented
     version: ticket.version + 1,
     title: 'new concert',
     price: 999,
