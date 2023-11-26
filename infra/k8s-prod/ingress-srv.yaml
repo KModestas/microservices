@@ -47,6 +47,8 @@ spec:
                 port:
                   number: 3000
 ---
+# https://www.udemy.com/course/microservices-with-node-js-and-react/learn/lecture/27616972
+# need to define a load balancer Service for the nginx controller manually due to a Digital ocean bug: 
 apiVersion: v1
 kind: Service
 metadata:
