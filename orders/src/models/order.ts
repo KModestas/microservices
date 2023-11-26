@@ -39,7 +39,7 @@ const orderSchema = new mongoose.Schema(
     expiresAt: {
       type: mongoose.Schema.Types.Date,
     },
-    // set up a mongoose reference between a ticket document and order document
+    // set up a mongoose reference between a ticket document and order document (allows us to use .populate())
     ticket: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Ticket',

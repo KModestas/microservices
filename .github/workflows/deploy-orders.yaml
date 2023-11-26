@@ -1,11 +1,13 @@
 name: deploy-orders
 
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'orders/**'
+# on:
+#   push:
+#     branches:
+#       - main
+#     paths:
+#       - 'orders/**'
+on: 
+  workflow_dispatch:
 
 jobs:
   build:

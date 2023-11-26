@@ -1,11 +1,13 @@
 name: deploy-expiration
 
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'expiration/**'
+# on:
+#   push:
+#     branches:
+#       - main
+#     paths:
+#       - 'expiration/**'
+on: 
+  workflow_dispatch:
 
 jobs:
   build:

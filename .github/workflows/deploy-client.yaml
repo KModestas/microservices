@@ -1,11 +1,13 @@
 name: deploy-client
 
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'client/**'
+# on:
+#   push:
+#     branches:
+#       - main
+#     paths:
+#       - 'client/**'
+on: 
+  workflow_dispatch:
 
 jobs:
   build:

@@ -1,9 +1,11 @@
 name: tests-orders
 
-on:
-  pull_request:
-    paths:
-      - 'orders/**'
+# on:
+#   pull_request:
+#     paths:
+#       - 'orders/**'
+on: 
+  workflow_dispatch:
 
 jobs:
   build:

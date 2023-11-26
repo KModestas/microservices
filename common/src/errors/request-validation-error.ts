@@ -13,6 +13,7 @@ export class RequestValidationError extends CustomError {
 
   serializeErrors() {
     return this.errors.map((err) => {
+      // field e.g. email, password etc
       if (err.type === 'field') {
         return { message: err.msg, field: err.path };
       }

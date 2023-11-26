@@ -1,9 +1,11 @@
 name: tests-payments
 
-on:
-  pull_request:
-    paths:
-      - 'payments/**'
+# on:
+#   pull_request:
+#     paths:
+#       - 'payments/**'
+on: 
+  workflow_dispatch:
 
 jobs:
   build:

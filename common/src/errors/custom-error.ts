@@ -5,7 +5,7 @@ export abstract class CustomError extends Error {
   constructor(message: string) {
     super(message);
 
-    // this line has to be added anytime we extend a built in javascript class like Error
+    // this line has to be added anytime we exteNnd a built in javascript class like Error
     Object.setPrototypeOf(this, CustomError.prototype);
   }
 

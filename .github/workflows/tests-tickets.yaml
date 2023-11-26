@@ -1,9 +1,11 @@
 name: tests-tickets
 
-on:
-  pull_request:
-    paths:
-      - 'tickets/**'
+# on:
+#   pull_request:
+#     paths:
+#       - 'tickets/**'
+on: 
+  workflow_dispatch:
 
 jobs:
   build:

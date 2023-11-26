@@ -1,9 +1,11 @@
 name: tests-auth
 
-on:
-  pull_request:
-    paths:
-      - 'auth/**'
+# on:
+#   pull_request:
+#     paths:
+#       - 'auth/**'
+on: 
+  workflow_dispatch:
 
 jobs:
   build:

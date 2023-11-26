@@ -60,6 +60,7 @@ ticketSchema.statics.findByEvent = (event: { id: string; version: number }) => {
     version: event.version - 1,
   });
 };
+
 ticketSchema.statics.build = (attrs: TicketAttrs) => {
   return new Ticket({
     // store the id from the event as _id (otherwise we will end up with both id and _id)
